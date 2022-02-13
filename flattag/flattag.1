@@ -1,0 +1,59 @@
+.TH FLATTAG 1 2022-02-12 "" "Flat Tag User's Manual"
+.SH NAME
+flattag \- flats tagged file like HTML or XML
+.SH SYNOPSIS
+.B flattag
+.RB [ \-o
+.IR output-file ]
+.RB [ \-d
+.IR defimiter ]
+.RB [ \-a
+.IR attribute-prefix ]
+.RB [ \-i
+.IR attribute-infix ]
+.RB [ \-c
+.IR auto-close-tag-name ]
+.RB [ \-n
+.IR newline-replace ]
+.RB [ \-t
+.IR tab-replace ]
+.RB [ \-I ]
+.RB [ \-L ]
+.I [ input-file ]
+.SH DESCRIPTION
+.B flattag
+flats tagged file like HTML or XML.
+.br
+All tags which are occurred is printed delimited by -d option.
+Attributes are printed after each tag name.
+Attributes are delimited by -a option and the key and value is delimited by -i option.
+.SH OPTION
+.B \-\^d " delimiter"
+Specify one character of delimiter. The default is tab.
+.TP
+.B \-\^a " attribute-prefix"
+Specify attribute prefix added beginning of attribute. The default is '@'.
+.TP
+.B \-\^i " attribute-infix"
+Specify attribute infix added between attribute key and its value. The default is '='.
+.TP
+.B \-\^c " auto-close-tag-name"
+Tags which close automatically if another tag is occurred are specified. Tags must delimited by comma.
+.TP
+.B \-\^n " newline-replace"
+A string to which newline character is replaced is specified. The default is one space character.
+.TP
+.B \-\^t " tab-replace"
+A string to which tab character is replaced is specified. The default is one space character.
+.TP
+.B \-\^I
+Ignores the attributes of tag.
+.TP
+.B \-\^L
+Treats the attribute like a tag. The 'tag' is the name of attribute and the 'value' is the value of attribute.
+.TP
+.SH NOTES
+The input of flattag must be encoded by UTF-8.
+.SH "SEE ALSO"
+flatj(1)
+
